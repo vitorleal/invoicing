@@ -1,4 +1,4 @@
-## My Invoice
+# My Invoice
 Invoice angular app based on [this one](http://metaware.github.io/angular-invoicing/)
 
 ## License
