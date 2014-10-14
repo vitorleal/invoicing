@@ -3,7 +3,6 @@ function InvoiceController($scope) {
   $scope.printMode   = false;
 
   var sample_invoice = {
-    tax           : 13.00,
     invoice_number: 10,
     customer_info:  {
       name    : "Cliente",
@@ -72,13 +71,9 @@ function InvoiceController($scope) {
     return total;
   }
 
-  $scope.calculate_tax = function () {
-    return (($scope.invoice.tax * $scope.invoice_sub_total())/100);
-  }
-
   $scope.calculate_grand_total = function () {
     localStorage["invoice"] = JSON.stringify($scope.invoice);
-    return $scope.calculate_tax() + $scope.invoice_sub_total();
+    return $scope.invoice_sub_total();
   }
 
   $scope.printInfo = function () {

@@ -3,7 +3,7 @@
   <head>
     <title>Meu orçamento</title>
     <meta charset="utf-8">
-    <meta name="description" content="My Invoice">
+    <meta name="description" content="Meu app de orçamento">
 
     <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -76,23 +76,7 @@
           </tr>
           <tr>
               <td colspan="4" align="right">
-                Sub Total
-              </td>
-              <td align="right">
-                {{invoice_sub_total() | currency : "R$ " }}
-              </td>
-          </tr>
-          <tr>
-              <td colspan="4" align="right">
-                Tax(%): <input ng:model="invoice.tax" ng:validate="number" style="width:43px">
-              </td>
-              <td align="right">
-                {{calculate_tax() | currency : "R$ " }}
-              </td>
-          </tr>
-          <tr>
-              <td colspan="4" align="right">
-                Grand Total:
+                <strong>Total:</strong>
               </td>
               <td align="right">
                 {{ calculate_grand_total() | currency : "R$ " }}
