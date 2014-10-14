@@ -33,7 +33,7 @@ function InvoiceController($scope) {
   }
 
   $scope.addItem = function () {
-    $scope.invoice.items.push({ qty:0, cost:0, description:"" });
+    $scope.invoice.items.push({ qty:0, cost:0, prazo: 1, description:"" });
   }
 
   $scope.removeLogo = function (element) {
@@ -66,6 +66,16 @@ function InvoiceController($scope) {
 
     angular.forEach($scope.invoice.items, function (item, key) {
       total += (item.qty * item.cost);
+    });
+
+    return total;
+  }
+
+  $scope.calculate_deadline = function () {
+    var total = 0;
+
+    angular.forEach($scope.invoice.items, function (item, key) {
+      total += (item.prazo) ? parseInt(item.prazo, 10) : 0;
     });
 
     return total;
