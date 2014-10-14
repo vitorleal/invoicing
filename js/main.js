@@ -6,10 +6,10 @@ function InvoiceController($scope) {
     tax           : 13.00,
     invoice_number: 10,
     customer_info:  {
-      name    : "Client",
+      name    : "Cliente",
       web_link: "www.client.com",
-      address1: "Client Address",
-      address2: "Client Address 2",
+      address1: "Endereço Cliente",
+      address2: "Endereço Cliente 2",
       postal: "00000-000"
     },
     company_info: {
@@ -40,12 +40,12 @@ function InvoiceController($scope) {
   $scope.removeLogo = function (element) {
     var elem = angular.element("#remove_logo");
 
-    if (elem.text() == "Show Logo") {
-      elem.text("Remove Logo");
+    if (elem.text() == "Mostrar Logo") {
+      elem.text("Remover Logo");
       $scope.logoRemoved = false;
 
     } else {
-      elem.text("Show Logo");
+      elem.text("Mostrar Logo");
       $scope.logoRemoved = true;
     }
   }
